@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function App() {
 
   const handleClick = () => {
-    alert('sorry for inconvenience Backend is not Yet Connected');
+    alert('sorry Backend is not Yet Connected');
   };
 
   return (

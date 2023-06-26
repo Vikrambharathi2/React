@@ -12,7 +12,7 @@ function Veg() {
   const [qualemonrice, setQualemonrice] = useState(0);
  
   const handleClick = () => {
-    alert('sorry for inconvenience Backend is not Yet Connected');
+    alert('sorry Backend is not Yet Connected');
   };
 
  function myfunc(id,quan,price){
