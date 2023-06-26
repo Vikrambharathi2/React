@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 function App() {
 
- 
+  const handleClick = () => {
+    alert('sorry for inconvenience Backend is not Yet Connected');
+  };
 
   return (
     <div className="App">
@@ -18,7 +20,7 @@ function App() {
     <input type="email" placeholder="Enter Your E-mail" required/> <br/>
     <input type="tel" placeholder="Enter Your MobileNumber" required/> <br/>
    <textarea class="p" name="textarea"placeholder="IF you have any problems type here" required></textarea><br/>
-   <button type="submit">submit</button> <br/>
+   <button type="submit" onClick={handleClick}>submit</button> <br/>
 </form>
 </div>   
 </section>

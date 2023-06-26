@@ -11,16 +11,27 @@ function Nonveg() {
   const [quamutton, setQuamutton] = useState(0);
   const  [quachicken, setQuachicken] = useState(0);
 
- 
+
+  
+    const handleClick = () => {
+      alert('sorry for inconvenience Backend is not Yet Connected');
+    };
+  
    function myfunc(id,quan,price){
       let  ids = id;
     let  quantity = quan ;
+    
    let  pri = price;
     let total = 0;
-    if(quantity>0){
+    if(quantity>0 && quantity!==0){
       total= pri * quantity;
-      document.getElementById(ids).innerHTML="Pay ₹"+total;
-   }
+      document.getElementById(ids).innerHTML="Pay ₹"+total ;
+    }
+   
+    if(quantity<0){
+      document.getElementById(ids).innerHTML="invalid";
+    }
+  
     }
     myfunc();
   return (
@@ -43,7 +54,8 @@ function Nonveg() {
                        <p class="card-text">This parmesan-crusted Lemon Chicken which is  favorite dish for Indians. </p>
                        <span class="price"><b>price ₹60</b> </span> <br></br>
                        <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQua(qua - 1)}>-</button>{qua}<button className='badge bg-secondary' onClick={()=> setQua(qua + 1)}>+</button><br></br> <br></br>
-                       <button class="btn btn-warning" id="lemonchickenbtn" onclick={myfunc("lemonchickenbtn",qua,60)}>Order Now</button>
+                       <button class="btn btn-warning" id="lemonchickenbtn" onclick={myfunc("lemonchickenbtn",qua,60)}>₹ 0</button>
+                       <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
                      </div>
                    </div>
                  </div>
@@ -55,7 +67,8 @@ function Nonveg() {
                          <p class="card-text">Recipe for Kerala style fish fry marinated in an oil marinade and shallow fried in oil.</p>
                          <span class="price"> <b>price ₹50</b></span> <br></br>
                          <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuaFish(quaFish - 1)}>-</button>{quaFish}<button className='badge bg-secondary' onClick={()=> setQuaFish(quaFish + 1)}>+</button><br></br> <br></br>
-                         <button class="btn btn-warning" id="fishbtn"  onclick={myfunc("fishbtn",quaFish,50)}>Order Now</button>
+                         <button class="btn btn-warning" id="fishbtn"  onclick={myfunc("fishbtn",quaFish,50)}>₹ 0</button>
+                         <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
                        </div>
                       </div>
                      </div>
@@ -67,7 +80,8 @@ function Nonveg() {
                                <p class="card-text">Tgg sandwich made of boiled eggs, caramelized onions and spice powders.</p>
                                <span class="price"> <b>price ₹90</b></span> <br></br>
                                <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuaegg(quaegg - 1)}>-</button>{quaegg}<button className='badge bg-secondary' onClick={()=> setQuaegg(quaegg + 1)}>+</button><br></br> <br></br>
-                               <button class="btn btn-warning" id="eggsandwichbtn" onclick={myfunc("eggsandwichbtn",quaegg,90)}>Order Now</button>
+                               <button class="btn btn-warning" id="eggsandwichbtn" onclick={myfunc("eggsandwichbtn",quaegg,90)}>₹ 0</button>
+                               <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
                               </div>
                              </div>
                             </div>
@@ -79,7 +93,8 @@ function Nonveg() {
                                    <p class="card-text">An interesting fusion between the Mughals and the British. A simple kheema stuffed into bread.</p>
                                    <span class="price"> <b>price ₹250</b></span> <br></br>
                                    <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuamutton(quamutton - 1)}>-</button>{quamutton}<button className='badge bg-secondary' onClick={()=> setQuamutton(quamutton + 1)}>+</button><br></br> <br></br>
-                                   <button class="btn btn-warning" id="muttonsandwichbtn" onclick={myfunc("muttonsandwichbtn",quamutton,250)}>Order Now</button>
+                                   <button class="btn btn-warning " id="muttonsandwichbtn" onclick={myfunc("muttonsandwichbtn",quamutton,250)}>₹ 0</button>
+                                   <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
                                   </div>
                                 </div>
                               </div>
@@ -91,7 +106,8 @@ function Nonveg() {
                                        <p class="card-text">Chicken Biryani is a famous recipe of South Asian countries full of healthy ingredients.</p>
                                        <span class="price"> <b>price ₹140</b></span> <br></br>
                                        <b class="qty">Quantity: </b><button className='badge  bg-secondary' onClick={()=> setQuachicken(quachicken - 1)}>-</button>{quachicken}<button className='badge  bg-secondary' onClick={()=> setQuachicken(quachicken + 1)}>+</button><br></br> <br></br>
-                                       <button class="btn btn-warning" id="Chickenbiryanibtn"  onclick={myfunc("Chickenbiryanibtn",quachicken,140)}>Order Now</button>
+                                       <button class="btn btn-warning" id="Chickenbiryanibtn"  onclick={myfunc("Chickenbiryanibtn",quachicken,140)}>₹ 0</button>
+                                       <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
                                      </div>
                                    </div>
                                  </div>

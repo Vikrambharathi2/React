@@ -11,17 +11,27 @@ function Veg() {
   const [quatomatorice, setQuatomatorice] = useState(0);
   const [qualemonrice, setQualemonrice] = useState(0);
  
-   function myfunc(id,quan,price){
-      let  ids = id;
-    let  quantity = quan ;
-   let  pri = price;
-    let total = 0;
-    if(quantity>0){
-      total= pri * quantity;
-      document.getElementById(ids).innerHTML="Pay ₹"+total;
-   }
-    }
-    myfunc();
+  const handleClick = () => {
+    alert('sorry for inconvenience Backend is not Yet Connected');
+  };
+
+ function myfunc(id,quan,price){
+    let  ids = id;
+  let  quantity = quan ;
+  
+ let  pri = price;
+  let total = 0;
+  if(quantity>0 && quantity!==0){
+    total= pri * quantity;
+    document.getElementById(ids).innerHTML="Pay ₹"+total ;
+  }
+ 
+  if(quantity<0){
+    document.getElementById(ids).innerHTML="invalid";
+  }
+
+  }
+  myfunc();
   return (
     <div className="App">
 
@@ -40,7 +50,8 @@ function Veg() {
           <p class="card-text">Lemon Rice also known as chitranna or nimmakaya pulihora is a crunchy, flavorful and tangy rice dish.</p>
           <span class="price"> <b>price ₹40</b></span> <br></br>
           <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQualemonrice(qualemonrice - 1)}>-</button>{qualemonrice}<button className='badge bg-secondary' onClick={()=> setQualemonrice(qualemonrice + 1)}>+</button><br></br> <br></br>
-          <button class="btn btn-warning" id="LemonRice" onclick={myfunc("LemonRice",qualemonrice,40)}>Order Now</button>
+          <button class="btn btn-warning" id="LemonRice" onclick={myfunc("LemonRice",qualemonrice,40)}>₹ 0</button>
+          <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
         </div>
                    </div>
                  </div>
@@ -52,7 +63,8 @@ function Veg() {
           <p class="card-text">Looking for an authentic Tomato Rice recipe? Here is a lip-smacking Tomato Rice that you can buy.</p>
           <span class="price"> <b>price ₹70</b></span> <br></br>
           <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuatomatorice(quatomatorice - 1)}>-</button>{quatomatorice}<button className='badge bg-secondary' onClick={()=> setQuatomatorice(quatomatorice + 1)}>+</button><br></br> <br></br>
-          <button class="btn btn-warning" id="TomatoRice" onclick={myfunc("TomatoRice",quatomatorice,70)}>Order Now</button>
+          <button class="btn btn-warning" id="TomatoRice" onclick={myfunc("TomatoRice",quatomatorice,70)}>₹ 0</button>
+          <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
         </div>
                       </div>
                      </div>
@@ -64,7 +76,8 @@ function Veg() {
           <p class="card-text">Curd rice or thayir sadam is a popular South Indian rice variety that is served with a South Indian.</p>
           <span class="price"> <b>price ₹55</b></span> <br></br>
           <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuacurdrice(quacurdrice - 1)}>-</button>{quacurdrice}<button className='badge bg-secondary' onClick={()=> setQuacurdrice(quacurdrice + 1)}>+</button><br></br> <br></br>
-          <button class="btn btn-warning" id="CurdRice" onclick={myfunc("CurdRice",quacurdrice,55)}>Order Now</button>
+          <button class="btn btn-warning" id="CurdRice" onclick={myfunc("CurdRice",quacurdrice,55)}>₹ 0</button>
+          <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
         </div>
                       </div>
                      </div>
@@ -76,7 +89,8 @@ function Veg() {
           <p class="card-text">idli & Dosa are two of the healthiest and most popular South Indian breakfast foods.</p>
           <span class="price"> <b>price ₹65</b></span> <br></br>
           <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuaidliDosa(quaidliDosa - 1)}>-</button>{quaidliDosa}<button className='badge bg-secondary' onClick={()=> setQuaidliDosa(quaidliDosa + 1)}>+</button><br></br> <br></br>
-          <button class="btn btn-warning" id="IdliDosa" onclick={myfunc("IdliDosa",quaidliDosa,65)}>Order Now</button>
+          <button class="btn btn-warning" id="IdliDosa" onclick={myfunc("IdliDosa",quaidliDosa,65)}>₹ 0</button>
+          <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
         </div>
                       </div>
                      </div>
@@ -88,7 +102,8 @@ function Veg() {
           <p class="card-text">Hyderabadi Veg Biryani is a delicious medley of succulent vegetables, spices, ghee, saffron.</p>
           <span class="price"> <b>price ₹90</b></span> <br></br>
           <b class="qty">Quantity: </b><button className='badge bg-secondary' onClick={()=> setQuavegbiryani(quavegbiryani - 1)}>-</button>{quavegbiryani}<button className='badge bg-secondary' onClick={()=> setQuavegbiryani(quavegbiryani + 1)}>+</button><br></br> <br></br>
-          <button class="btn btn-warning" id="VegBiryani" onclick={myfunc("VegBiryani",quavegbiryani,90)}>Order Now</button>
+          <button class="btn btn-warning" id="VegBiryani" onclick={myfunc("VegBiryani",quavegbiryani,90)}>₹ 0</button>
+          <button className='buy btn btn-warning float-end'onClick={handleClick}>Buy Now</button>
         </div>
                       </div>
                      </div>
